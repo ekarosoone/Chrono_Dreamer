@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://bp0kuspmwucdg"]
+[gd_scene load_steps=122 format=3 uid="uid://bp0kuspmwucdg"]
 
 [ext_resource type="Texture2D" uid="uid://bfy6bt02nkhhn" path="res://Assest/Background/middle.png" id="1_hn7yw"]
 [ext_resource type="Script" uid="uid://cmmvvbje744sa" path="res://tscnfile/Main.gd" id="1_ylijq"]
@@ -101,7 +101,6 @@
 [ext_resource type="Script" uid="uid://djwo4flqca62x" path="res://gd file/rigid_body_2d.gd" id="98_vq8r4"]
 [ext_resource type="Texture2D" uid="uid://bijujwcj2dhhb" path="res://Assest/Platform/spr_Box.png" id="99_jclyk"]
 [ext_resource type="Script" uid="uid://cx6eoh88llugp" path="res://gd file/m_box_door.gd" id="100_y42q3"]
-[ext_resource type="Script" uid="uid://ehegpkpuxtyr" path="res://gd file/m_box_cavup.gd" id="101_60f0u"]
 [ext_resource type="Texture2D" uid="uid://b584guu0048qd" path="res://Assest/Props/door.png" id="101_mgqpq"]
 [ext_resource type="Script" uid="uid://b0n1xh70kwtjx" path="res://gd file/Stage1_cavetoStage2.gd" id="102_hn7yw"]
 [ext_resource type="Script" uid="uid://c6t4tgy5vhx0s" path="res://gd file/Button.gd" id="103_liq3o"]
@@ -631,9 +630,6 @@ size = Vector2(20, 18)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iksn3"]
 size = Vector2(124.5, 18)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylijq"]
-size = Vector2(28, 24)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6fkc"]
 size = Vector2(22, 33)
 
@@ -922,20 +918,6 @@ texture = ExtResource("99_jclyk")
 position = Vector2(302, 135)
 shape = SubResource("RectangleShape2D_i6rmi")
 
-[node name="M_Box3" type="RigidBody2D" parent="OBJ"]
-position = Vector2(812, 2597)
-script = ExtResource("98_vq8r4")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="OBJ/M_Box3"]
-position = Vector2(302, 135)
-scale = Vector2(0.30303, 0.272727)
-texture = ExtResource("99_jclyk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/M_Box3"]
-position = Vector2(302, 135)
-shape = SubResource("RectangleShape2D_i6rmi")
-
 [node name="M_Box_door" type="RigidBody2D" parent="OBJ"]
 position = Vector2(536, 2226)
 script = ExtResource("100_y42q3")
@@ -949,20 +931,6 @@ texture = ExtResource("99_jclyk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/M_Box_door"]
 position = Vector2(247.75, 135)
 shape = SubResource("RectangleShape2D_iksn3")
-
-[node name="M_BoxCAVUP" type="RigidBody2D" parent="OBJ"]
-position = Vector2(-500, 2138)
-script = ExtResource("101_60f0u")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="OBJ/M_BoxCAVUP"]
-position = Vector2(304, 131)
-scale = Vector2(0.454545, 0.393942)
-texture = ExtResource("99_jclyk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/M_BoxCAVUP"]
-position = Vector2(304, 131)
-shape = SubResource("RectangleShape2D_ylijq")
 
 [node name="Door" type="Sprite2D" parent="."]
 position = Vector2(958, 2141)
@@ -1004,15 +972,6 @@ shape = SubResource("RectangleShape2D_60f0u")
 position = Vector2(171, 2543)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Ui_Node"]
-
-[node name="Label2" type="Label" parent="Ui_Node/CanvasLayer"]
-offset_left = 121.0
-offset_top = 2521.0
-offset_right = 274.0
-offset_bottom = 2552.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 10
-text = "나중에 ui에 고정한 시간 타이머 구현"
 
 [node name="Label2" type="Label" parent="Ui_Node"]
 offset_left = 30.0
