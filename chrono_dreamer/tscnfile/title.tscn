@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfbi5t4hnu4ou"]
+
+[ext_resource type="Script" uid="uid://c0wyu3n1mlsip" path="res://gd file/title_screen.gd" id="1_56vf6"]
+[ext_resource type="Texture2D" uid="uid://dv6i7vaaeiesc" path="res://Assest/Job/title.png" id="2_j2ewu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyqm6"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpexm"]
+draw_center = false
+
+[node name="Title" type="Node2D"]
+
+[node name="TitleScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_56vf6")
+
+[node name="Label" type="Label" parent="TitleScreen"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = -45.0
+offset_right = 271.0
+offset_bottom = -22.0
+text = "Chrono Dreamer"
+
+[node name="ChatGptImage2025년5월14일오후124453" type="Sprite2D" parent="TitleScreen"]
+position = Vector2(962.5, 543.5)
+scale = Vector2(1.25716, 1.07129)
+texture = ExtResource("2_j2ewu")
+metadata/_edit_lock_ = true
+
+[node name="StartButton" type="Button" parent="TitleScreen"]
+layout_mode = 0
+offset_left = 618.0
+offset_top = 392.0
+offset_right = 1144.0
+offset_bottom = 494.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_oyqm6")
+text = "
+"
+
+[node name="QuitButton" type="Button" parent="TitleScreen"]
+layout_mode = 0
+offset_left = 619.0
+offset_top = 535.0
+offset_right = 1139.0
+offset_bottom = 637.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_kpexm")

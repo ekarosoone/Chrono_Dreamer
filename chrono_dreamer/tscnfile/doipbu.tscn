@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwwo16ordxp3o"]
+
+[ext_resource type="Script" uid="uid://cl313cj7nmunb" path="res://gd file/doip.gd" id="1_3l3it"]
+[ext_resource type="Texture2D" uid="uid://cl0ou0d1nnprp" path="res://Assest/Job/doipbu.png" id="2_xm8ar"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xm8ar"]
+bg_color = Color(0, 0, 0, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="doipbu" type="Node2D"]
+
+[node name="doip" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3l3it")
+
+[node name="Doipbu" type="Sprite2D" parent="doip"]
+position = Vector2(963, 540.5)
+scale = Vector2(1.2513, 1.07129)
+texture = ExtResource("2_xm8ar")
+
+[node name="NameField" type="LineEdit" parent="doip"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 497.0
+offset_right = 1626.0
+offset_bottom = 717.0
+theme_override_colors/font_color = Color(0.862745, 0.815686, 1, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_xm8ar")
+placeholder_text = "여기에 이름을 입력하세요."
+alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 598.0
+offset_top = 111.0
+offset_right = 1295.0
+offset_bottom = 250.0
+theme_override_colors/font_color = Color(0.878431, 0.811765, 1, 1)
+theme_override_font_sizes/font_size = 100
+text = "너 이름이 뭐야?"
