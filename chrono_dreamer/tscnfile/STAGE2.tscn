@@ -97,9 +97,9 @@
 [ext_resource type="Texture2D" uid="uid://d1ytu20no51qi" path="res://Assest/Player/Dead (14).png" id="94_ygpl4"]
 [ext_resource type="Texture2D" uid="uid://bpovuinl8ky7u" path="res://Assest/Player/Dead (15).png" id="95_ucvnn"]
 [ext_resource type="Script" uid="uid://ddrkpp36tcro5" path="res://gd file/Stage2_box.gd" id="96_fcqgo"]
-[ext_resource type="Script" uid="uid://djwo4flqca62x" path="res://gd file/rigid_body_2d.gd" id="97_g554i"]
 [ext_resource type="Texture2D" uid="uid://bijujwcj2dhhb" path="res://Assest/Platform/spr_Box.png" id="98_biwoi"]
 [ext_resource type="Texture2D" uid="uid://segufv8mvqcu" path="res://Assest/Cha/누끼ChatGPT Image 2025년 5월 20일 오후 06_29_24-Photoroom.png" id="100_fcqgo"]
+[ext_resource type="Script" uid="uid://cemmpgjwrnn8c" path="res://gd file/BANBOX.gd" id="100_pv454"]
 [ext_resource type="Script" uid="uid://divw4k0xgjbqk" path="res://gd file/Stage2_meet_Girl.gd" id="100_vnxel"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eoois"]
@@ -617,11 +617,11 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6rmi"]
-size = Vector2(20, 18)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pv454"]
 size = Vector2(75.8812, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1uy3j"]
+size = Vector2(30, 30)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vnxel")
@@ -845,48 +845,6 @@ text = "SHIFT + A + JUMP!!"
 
 [node name="OBJ" type="Node2D" parent="."]
 
-[node name="M_Box" type="RigidBody2D" parent="OBJ" groups=["pushable"]]
-position = Vector2(2485, 861)
-script = ExtResource("97_g554i")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="OBJ/M_Box"]
-position = Vector2(302, 135)
-scale = Vector2(0.30303, 0.272727)
-texture = ExtResource("98_biwoi")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/M_Box"]
-position = Vector2(302, 135)
-shape = SubResource("RectangleShape2D_i6rmi")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="OBJ" groups=["pushable"]]
-position = Vector2(2515, 872)
-script = ExtResource("97_g554i")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="OBJ/RigidBody2D"]
-position = Vector2(302, 135)
-scale = Vector2(0.30303, 0.272727)
-texture = ExtResource("98_biwoi")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/RigidBody2D"]
-position = Vector2(302, 135)
-shape = SubResource("RectangleShape2D_i6rmi")
-
-[node name="M_Box2" type="RigidBody2D" parent="OBJ" groups=["pushable"]]
-position = Vector2(2446, 871)
-script = ExtResource("97_g554i")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="OBJ/M_Box2"]
-position = Vector2(302, 135)
-scale = Vector2(0.30303, 0.272727)
-texture = ExtResource("98_biwoi")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/M_Box2"]
-position = Vector2(302, 135)
-shape = SubResource("RectangleShape2D_i6rmi")
-
 [node name="BackGirl" type="Sprite2D" parent="."]
 position = Vector2(4237, 1036)
 scale = Vector2(0.0351564, 0.0329589)
@@ -901,3 +859,31 @@ scale = Vector2(48.2954, 40.4447)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackGirl/Area2D"]
 position = Vector2(10.8484, 4.5011)
 shape = SubResource("RectangleShape2D_pv454")
+
+[node name="M_BOX_CaveUP1" type="CharacterBody2D" parent="."]
+position = Vector2(2458, 898)
+script = ExtResource("100_pv454")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="M_BOX_CaveUP1"]
+position = Vector2(304, 132)
+shape = SubResource("RectangleShape2D_1uy3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="M_BOX_CaveUP1"]
+position = Vector2(304, 132)
+scale = Vector2(0.454545, 0.454545)
+texture = ExtResource("98_biwoi")
+
+[node name="M_BOX_CaveUP2" type="CharacterBody2D" parent="."]
+position = Vector2(2528, 893)
+script = ExtResource("100_pv454")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="M_BOX_CaveUP2"]
+position = Vector2(304, 132)
+shape = SubResource("RectangleShape2D_1uy3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="M_BOX_CaveUP2"]
+position = Vector2(304, 132)
+scale = Vector2(0.454545, 0.454545)
+texture = ExtResource("98_biwoi")

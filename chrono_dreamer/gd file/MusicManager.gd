@@ -38,11 +38,20 @@ func play_music(track_name: String):
 	# 새 곡 재생 및 페이드인
 	current_track = track_name
 	player.stop()
-	player.stream = music_library[track_name]
+
+	var stream = music_library[track_name]
+	if stream is AudioStream:
+		stream.loop = true  # ✅ 스트림 자체에 루프 설정
+
+	player.stream = stream
 	player.play()
 
 	volume_tween = create_tween()
 	volume_tween.tween_property(player, "volume_db", 0, fade_time)
+
+
+
+
 
 func stop_music():
 	if volume_tween:

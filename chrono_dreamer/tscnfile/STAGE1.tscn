@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://dkxlc4w7wif3y"]
+[gd_scene load_steps=117 format=3 uid="uid://dkxlc4w7wif3y"]
 
 [ext_resource type="Script" uid="uid://cp7rcimih3xhl" path="res://gd file/stage_1.gd" id="1_dbaxk"]
 [ext_resource type="Texture2D" uid="uid://bfy6bt02nkhhn" path="res://Assest/Background/middle.png" id="1_i6rmi"]
@@ -104,6 +104,7 @@
 [ext_resource type="Script" uid="uid://f7kswhck7t36" path="res://gd file/Stage1ltoStage1_cave.gd" id="100_ac8pw"]
 [ext_resource type="Script" uid="uid://cx6eoh88llugp" path="res://gd file/m_box_door.gd" id="100_iksn3"]
 [ext_resource type="Texture2D" uid="uid://bri1uoswo4atq" path="res://Assest/Props/crank-up.png" id="103_wxhqd"]
+[ext_resource type="Script" uid="uid://cemmpgjwrnn8c" path="res://gd file/BANBOX.gd" id="105_fphm6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxhqd"]
 texture = ExtResource("10_llyii")
@@ -629,6 +630,9 @@ size = Vector2(124.5, 18)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6fkc"]
 size = Vector2(22, 33)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx203"]
+size = Vector2(30, 30)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_dbaxk")
 
@@ -864,20 +868,6 @@ text = "SHIFT + A + JUMP!!"
 
 [node name="OBJ" type="Node2D" parent="."]
 
-[node name="M_Box" type="RigidBody2D" parent="OBJ" groups=["pushable"]]
-position = Vector2(2477, 849)
-script = ExtResource("96_sbhmn")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="OBJ/M_Box"]
-position = Vector2(302, 135)
-scale = Vector2(0.30303, 0.272727)
-texture = ExtResource("97_lhbno")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/M_Box"]
-position = Vector2(302, 135)
-shape = SubResource("RectangleShape2D_i6rmi")
-
 [node name="M_Box2" type="RigidBody2D" parent="OBJ" groups=["pushable"]]
 position = Vector2(-1918, 1618)
 script = ExtResource("96_sbhmn")
@@ -889,20 +879,6 @@ scale = Vector2(0.30303, 0.272727)
 texture = ExtResource("97_lhbno")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/M_Box2"]
-position = Vector2(302, 135)
-shape = SubResource("RectangleShape2D_i6rmi")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="OBJ" groups=["pushable"]]
-position = Vector2(2441, 890)
-script = ExtResource("96_sbhmn")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="OBJ/RigidBody2D"]
-position = Vector2(302, 135)
-scale = Vector2(0.30303, 0.272727)
-texture = ExtResource("97_lhbno")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/RigidBody2D"]
 position = Vector2(302, 135)
 shape = SubResource("RectangleShape2D_i6rmi")
 
@@ -949,3 +925,31 @@ shape = SubResource("RectangleShape2D_a6fkc")
 [node name="Crank-up" type="Sprite2D" parent="."]
 position = Vector2(228, 2616)
 texture = ExtResource("103_wxhqd")
+
+[node name="M_BOX_CaveUP1" type="CharacterBody2D" parent="."]
+position = Vector2(2458, 898)
+script = ExtResource("105_fphm6")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="M_BOX_CaveUP1"]
+position = Vector2(304, 132)
+shape = SubResource("RectangleShape2D_jx203")
+
+[node name="Sprite2D" type="Sprite2D" parent="M_BOX_CaveUP1"]
+position = Vector2(304, 132)
+scale = Vector2(0.454545, 0.454545)
+texture = ExtResource("97_lhbno")
+
+[node name="M_BOX_CaveUP2" type="CharacterBody2D" parent="."]
+position = Vector2(2528, 893)
+script = ExtResource("105_fphm6")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="M_BOX_CaveUP2"]
+position = Vector2(304, 132)
+shape = SubResource("RectangleShape2D_jx203")
+
+[node name="Sprite2D" type="Sprite2D" parent="M_BOX_CaveUP2"]
+position = Vector2(304, 132)
+scale = Vector2(0.454545, 0.454545)
+texture = ExtResource("97_lhbno")

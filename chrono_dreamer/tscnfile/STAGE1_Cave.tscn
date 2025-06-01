@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://bp0kuspmwucdg"]
+[gd_scene load_steps=123 format=3 uid="uid://bp0kuspmwucdg"]
 
 [ext_resource type="Texture2D" uid="uid://bfy6bt02nkhhn" path="res://Assest/Background/middle.png" id="1_hn7yw"]
 [ext_resource type="Script" uid="uid://cmmvvbje744sa" path="res://tscnfile/Main.gd" id="1_ylijq"]
@@ -642,6 +642,9 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q4ecs"]
 size = Vector2(30, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vca7g"]
+size = Vector2(30, 30)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ylijq")
 
@@ -876,20 +879,6 @@ text = "SHIFT + A + JUMP!!"
 
 [node name="OBJ" type="Node2D" parent="."]
 
-[node name="M_Box" type="RigidBody2D" parent="OBJ"]
-position = Vector2(2477, 849)
-script = ExtResource("98_vq8r4")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="OBJ/M_Box"]
-position = Vector2(302, 135)
-scale = Vector2(0.30303, 0.272727)
-texture = ExtResource("99_jclyk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/M_Box"]
-position = Vector2(302, 135)
-shape = SubResource("RectangleShape2D_i6rmi")
-
 [node name="M_Box2" type="RigidBody2D" parent="OBJ"]
 position = Vector2(-1918, 1618)
 script = ExtResource("98_vq8r4")
@@ -901,20 +890,6 @@ scale = Vector2(0.30303, 0.272727)
 texture = ExtResource("99_jclyk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/M_Box2"]
-position = Vector2(302, 135)
-shape = SubResource("RectangleShape2D_i6rmi")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="OBJ"]
-position = Vector2(2441, 890)
-script = ExtResource("98_vq8r4")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="OBJ/RigidBody2D"]
-position = Vector2(302, 135)
-scale = Vector2(0.30303, 0.272727)
-texture = ExtResource("99_jclyk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/RigidBody2D"]
 position = Vector2(302, 135)
 shape = SubResource("RectangleShape2D_i6rmi")
 
@@ -1010,6 +985,34 @@ position = Vector2(304, 132)
 shape = SubResource("RectangleShape2D_q4ecs")
 
 [node name="Sprite2D" type="Sprite2D" parent="M_BOX_CaveUP2"]
+position = Vector2(304, 132)
+scale = Vector2(0.454545, 0.454545)
+texture = ExtResource("99_jclyk")
+
+[node name="M_BOX_CaveUP3" type="CharacterBody2D" parent="."]
+position = Vector2(2458, 898)
+script = ExtResource("109_p4t7x")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="M_BOX_CaveUP3"]
+position = Vector2(304, 132)
+shape = SubResource("RectangleShape2D_vca7g")
+
+[node name="Sprite2D" type="Sprite2D" parent="M_BOX_CaveUP3"]
+position = Vector2(304, 132)
+scale = Vector2(0.454545, 0.454545)
+texture = ExtResource("99_jclyk")
+
+[node name="M_BOX_CaveUP4" type="CharacterBody2D" parent="."]
+position = Vector2(2528, 893)
+script = ExtResource("109_p4t7x")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="M_BOX_CaveUP4"]
+position = Vector2(304, 132)
+shape = SubResource("RectangleShape2D_vca7g")
+
+[node name="Sprite2D" type="Sprite2D" parent="M_BOX_CaveUP4"]
 position = Vector2(304, 132)
 scale = Vector2(0.454545, 0.454545)
 texture = ExtResource("99_jclyk")

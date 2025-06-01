@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=3 uid="uid://hgsbdafwkqju"]
+[gd_scene load_steps=123 format=3 uid="uid://hgsbdafwkqju"]
 
 [ext_resource type="Script" uid="uid://cmmvvbje744sa" path="res://tscnfile/Main.gd" id="1_fe72r"]
 [ext_resource type="Texture2D" uid="uid://c2xqd0f8abun8" path="res://Assest/Job/caveback.png" id="3_c20cr"]
@@ -106,6 +106,7 @@
 [ext_resource type="Texture2D" uid="uid://bri1uoswo4atq" path="res://Assest/Props/crank-up.png" id="105_dcu15"]
 [ext_resource type="Script" uid="uid://cj71cabtwsu0w" path="res://gd file/face_door.gd" id="106_stkae"]
 [ext_resource type="Texture2D" uid="uid://segufv8mvqcu" path="res://Assest/Cha/누끼ChatGPT Image 2025년 5월 20일 오후 06_29_24-Photoroom.png" id="107_c20cr"]
+[ext_resource type="Script" uid="uid://cemmpgjwrnn8c" path="res://gd file/BANBOX.gd" id="108_1bmte"]
 [ext_resource type="Script" uid="uid://m4nc7ld1jwvk" path="res://tscnfile/back_girl.gd" id="108_c20cr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eoois"]
@@ -641,6 +642,9 @@ size = Vector2(24, 17)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60f0u"]
 size = Vector2(32, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yanpx"]
+size = Vector2(30, 30)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_fe72r")
 
@@ -714,6 +718,7 @@ tile_set = SubResource("TileSet_sqdlx")
 format = 2
 
 [node name="Props" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Rock" type="Sprite2D" parent="Props"]
 position = Vector2(1020, 969)
@@ -767,6 +772,7 @@ texture = ExtResource("16_hougy")
 [node name="Spike-skull" type="Sprite2D" parent="Props"]
 position = Vector2(2823, 1050)
 texture = ExtResource("17_sw1kx")
+metadata/_edit_lock_ = true
 
 [node name="Tree-house" type="Sprite2D" parent="Props"]
 position = Vector2(1344, 824)
@@ -779,6 +785,7 @@ texture = ExtResource("19_rvyqj")
 [node name="Spikes-top" type="Sprite2D" parent="Props"]
 position = Vector2(2795, 965)
 texture = ExtResource("20_8otom")
+metadata/_edit_lock_ = true
 
 [node name="Face-block" type="Sprite2D" parent="Props"]
 position = Vector2(3817, 872)
@@ -875,20 +882,6 @@ text = "SHIFT + A + JUMP!!"
 
 [node name="OBJ" type="Node2D" parent="."]
 
-[node name="M_Box" type="RigidBody2D" parent="OBJ"]
-position = Vector2(2477, 849)
-script = ExtResource("99_q8ohu")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="OBJ/M_Box"]
-position = Vector2(302, 135)
-scale = Vector2(0.30303, 0.272727)
-texture = ExtResource("100_kyt1q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/M_Box"]
-position = Vector2(302, 135)
-shape = SubResource("RectangleShape2D_i6rmi")
-
 [node name="M_Box2" type="RigidBody2D" parent="OBJ"]
 position = Vector2(-1918, 1618)
 script = ExtResource("99_q8ohu")
@@ -900,20 +893,6 @@ scale = Vector2(0.30303, 0.272727)
 texture = ExtResource("100_kyt1q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/M_Box2"]
-position = Vector2(302, 135)
-shape = SubResource("RectangleShape2D_i6rmi")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="OBJ"]
-position = Vector2(2441, 890)
-script = ExtResource("99_q8ohu")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="OBJ/RigidBody2D"]
-position = Vector2(302, 135)
-scale = Vector2(0.30303, 0.272727)
-texture = ExtResource("100_kyt1q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OBJ/RigidBody2D"]
 position = Vector2(302, 135)
 shape = SubResource("RectangleShape2D_i6rmi")
 
@@ -1021,3 +1000,31 @@ metadata/_edit_group_ = true
 [node name="Area2D" type="Area2D" parent="BackGirl"]
 position = Vector2(-1791.99, -333.746)
 scale = Vector2(48.2954, 40.4447)
+
+[node name="M_BOX_CaveUP1" type="CharacterBody2D" parent="."]
+position = Vector2(2458, 898)
+script = ExtResource("108_1bmte")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="M_BOX_CaveUP1"]
+position = Vector2(304, 132)
+shape = SubResource("RectangleShape2D_yanpx")
+
+[node name="Sprite2D" type="Sprite2D" parent="M_BOX_CaveUP1"]
+position = Vector2(304, 132)
+scale = Vector2(0.454545, 0.454545)
+texture = ExtResource("100_kyt1q")
+
+[node name="M_BOX_CaveUP2" type="CharacterBody2D" parent="."]
+position = Vector2(2528, 893)
+script = ExtResource("108_1bmte")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="M_BOX_CaveUP2"]
+position = Vector2(304, 132)
+shape = SubResource("RectangleShape2D_yanpx")
+
+[node name="Sprite2D" type="Sprite2D" parent="M_BOX_CaveUP2"]
+position = Vector2(304, 132)
+scale = Vector2(0.454545, 0.454545)
+texture = ExtResource("100_kyt1q")
